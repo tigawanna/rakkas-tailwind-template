@@ -54,7 +54,7 @@ export function AppShell({ children }: AppShellProps) {
         )}
 
         {/* app children */}
-        <div className="h-full w-full items-center justify-center overflow-y-scroll">
+          <div className="h-screen w-full items-center justify-center overflow-y-scroll">
           {children}
         </div>
       </div>

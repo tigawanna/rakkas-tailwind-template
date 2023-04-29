@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 
-:root{
+/* :root{
 
 --accent-color:hsl(21, 61%, 38%);
 --accent-color-foreground:hsl(21, 61%, 68%);
 --secondary-color:hsl(41, 83%, 30%);
 
-}
+} */
 
 @layer base {
   :root {
