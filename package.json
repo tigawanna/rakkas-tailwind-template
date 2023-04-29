@@ -32,6 +32,7 @@
     "vitest": "^0.28.5"
   },
   "dependencies": {
+    "@tanem/react-nprogress": "^5.0.35",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
     "lucide-react": "^0.187.0",

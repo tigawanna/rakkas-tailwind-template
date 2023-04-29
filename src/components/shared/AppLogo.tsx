@@ -6,7 +6,8 @@ interface AppLogoProps {
 export function AppLogo({ height = "40px", width = "40px" }: AppLogoProps) {
   return (
     <svg
-      fill="#f8d00d"
+    className="fill-accent-foreground"
+      // fill="#f8d00d"
       height={height}
       width={width}
       version="1.1"

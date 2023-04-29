@@ -1,7 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
+
+:root{
+
+--accent-color:hsl(21, 61%, 38%);
+--accent-color-foreground:hsl(21, 61%, 68%);
+--secondary-color:hsl(41, 83%, 30%);
+
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -25,11 +34,11 @@
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
  
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent:41, 83%, 50%;
+    --accent-foreground: 41, 83%, 30%;
  
     --destructive: 0 100% 50%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 285, 42%, 40%;
  
     --ring: 215 20.2% 65.1%;
  
@@ -46,8 +55,8 @@
     --popover: 224 71% 4%;
     --popover-foreground: 215 20.2% 65.1%;
  
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
  
     --border: 216 34% 17%;
     --input: 216 34% 17%;
@@ -58,8 +67,8 @@
     --secondary: 222.2 47.4% 11.2%;
     --secondary-foreground: 210 40% 98%;
  
-    --accent: 216 34% 17%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 40, 79%, 50%;
+    --accent-foreground:40, 79%, 39%;
  
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;

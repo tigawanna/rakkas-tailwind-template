@@ -41,25 +41,25 @@ export default createRequestHandler({
         // available on the server-side.
       },
 
-      // wrapApp(app) {
-      //   // Wrap the Rakkas application in some provider
-      //   // component (only on the server).
-      //   return app;
-      // },
-
-      wrapSsrStream(stream) {
-        const { readable, writable } = new TransformStream({
-          transform(chunk, controller) {
-            // You can transform the chunks of the
-            // React SSR stream here.
-            controller.enqueue(chunk);
-          },
-        });
-
-        // stream.pipeThrough(writable);
-
-        return readable;
+      wrapApp(app) {
+        // Wrap the Rakkas application in some provider
+        // component (only on the server).
+        return app;
       },
+
+      // wrapSsrStream(stream) {
+      //   const { readable, writable } = new TransformStream({
+      //     transform(chunk, controller) {
+      //       // You can transform the chunks of the
+      //       // React SSR stream here.
+      //       controller.enqueue(chunk);
+      //     },
+      //   });
+
+      //   // stream.pipeThrough(writable);
+
+      //   return readable;
+      // },
     };
   },
 });

@@ -16,6 +16,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", ".eslintrc.cjs", "global.d.ts", "rks/client.entry.tsx"],
+  "include": ["src", ".eslintrc.cjs", "global.d.ts", "src/client.entry.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

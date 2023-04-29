@@ -20,8 +20,9 @@ export function NavBar({ open, setOpen }: NavBarProps) {
 
   return (
     <div
-      className="fixed flex h-full w-[80%] flex-col items-center text-slate-950 dark:text-slate-50
-      bg-slate-200 dark:bg-slate-900 md:static md:w-[100%] "
+      className="fixed flex h-full w-[80%] flex-col items-center 
+      border shadow-2xl bg-secondary
+       md:static md:w-[100%] "
     >
       
       <div className="absolute right-1 top-1 m-2 md:hidden ">
@@ -33,20 +34,20 @@ export function NavBar({ open, setOpen }: NavBarProps) {
         />
       </div>
 
-      <Link href="/" className="w-full h-[10%] 
-      flex  items-center justify-center
-      p-2 bg-slate-400 dark:bg-transparent border-b shadow-lg ">
-        <AppLogo width="50px" height="50px" />
+      <Link href="/" className="w-full h-[10%] flex  items-center justify-center 
+      hover:bg-slate-300 dark:hover:bg-slate-700
+      p-2 border-b shadow-lg ">
+        <AppLogo width="80px" height="80px" />
       </Link>
 
-      <nav className="flex max-h-[60%] w-[90%] flex-grow flex-col  gap-3 pt-5 brightness-110">
+      <nav className="flex max-h-[60%] w-[90%] flex-grow flex-col  gap-3 pt-5 ">
         {links.map((link) => (
           <NavLink key={link.label} {...link} />
         ))}
       </nav>
 
       <div className=" flex h-[20%] flex-col gap-5">
-        <IconWrapper Icon={Settings} size={"25px"} className="hover:brightness-75" />
+        <IconWrapper Icon={Settings} size={"25px"} className="hover:brightness-75 hover:text-accent" />
         <IconWrapper
           Icon={LogOut}
           size={"25px"}
@@ -78,12 +79,13 @@ interface NavLinkProps {
 
 function NavLink({ label, url, RouteIcon }: NavLinkProps) {
   return (
-    <div className="flex w-full items-center justify-center gap-5 hover:brightness-150">
+    <div className="flex w-full items-center justify-center gap-5 hover:brightness-90 
+       dark:hover:brightness-150">
       <StyledLink
         href={url}
-        className="flex h-full w-full items-center justify-center gap-5 rounded-full p-3 
-        hover:bg-slate-300 dark:hover:bg-slate-900"
-        activeClass="brightness-90"
+        className="flex h-full w-full items-center justify-center gap-5 rounded p-3 
+        hover:bg-slate-300 dark:hover:bg-slate-900 text-lg font-semibold"
+        activeClass="shadow-accent shadow text-accent-foreground"
       >
         <IconWrapper Icon={RouteIcon} size={"20px"} />
 

@@ -1,8 +1,9 @@
-import { Head } from "rakkasjs";
+import { Head, UseLocationResult, useLocation } from "rakkasjs";
 import { NavBar } from "./NavBar";
 import { IconWrapper } from "../../../components/shared/LucideIcon";
 import { Menu } from "lucide-react";
 import { useBackDrop } from "../../../hooks/useBackDrop";
+import { ReactProgress } from "../../../components/shared/ReactProgress";
 
 
 interface AppShellProps {
@@ -11,18 +12,27 @@ interface AppShellProps {
 
 export function AppShell({ children }: AppShellProps) {
   const { open, setOpen, is_mobile, slowlyCloseBackdrop } = useBackDrop();
-
+  const location = useLocation();
+  const isanumating = (location: UseLocationResult) => {
+    if (location.pending) {
+      return true;
+    }
+    return false;
+  };
   return (
-    <div className="flex h-screen w-full flex-col items-center justify-center ">
+    <div className="flex h-screen w-full flex-col items-center justify-center">
       <Head title="Home" />
       
 
       {/* header */}
-      <div className="flex h-14  w-full items-center justify-center">
+      <div className="h-14  w-full flex flex-col items-center justify-center">
+        <div className="w-full fixed top-0 z-50 ">
+        <ReactProgress isAnimating={location.pending?true:false} />
+        </div>
         <div className="w-full p-2">
           <IconWrapper
             Icon={Menu}
-            size={"40px"}
+            size={"30px"}
             className="hover:brightness-75"
             onClick={() => setOpen(!open)}
           />
