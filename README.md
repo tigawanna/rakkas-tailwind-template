@@ -1,4 +1,4 @@
-# Rakkas + Tailwind template
+# Rakkasjs + Tailwind + shadcon/ui template
 
 using 
 
@@ -12,4 +12,8 @@ followed by the shadan component
 - [lucide-react icons](https://lucide.dev/)
 
 - tailwind-prettier-plugin
-- 
+- run 
+```sh
+npm page pagename
+```
+to add new pages on the same name

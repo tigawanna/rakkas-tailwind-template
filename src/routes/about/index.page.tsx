@@ -1,12 +1,11 @@
 import { Page } from "rakkasjs";
-import { Profile } from "./components/Profile";
 
- const ProfilePage:Page=({})=> {
+const about: Page = ({}) => {
   return (
     <main className="h-full w-full flex items-center justify-center o">
-      <Profile/>
+      {/* Add your page content here */}
     </main>
   );
 }
 
-export default ProfilePage
+export default about

@@ -11,7 +11,8 @@
     "test:typecheck": "tsc -p tsconfig.json --noEmit",
     "test:format": "prettier --check --ignore-unknown src",
     "test:lint": "eslint . --ignore-pattern dist",
-    "test:unit": "vitest run"
+    "test:unit": "vitest run",
+    "page":"node script/newpage"
   },
   "devDependencies": {
     "@rakkasjs/eslint-config": "0.6.20",
@@ -32,7 +33,9 @@
     "vitest": "^0.28.5"
   },
   "dependencies": {
+    "@radix-ui/react-label": "^2.0.1",
     "@radix-ui/react-scroll-area": "^1.0.3",
+    "@radix-ui/react-select": "^1.2.1",
     "@tanem/react-nprogress": "^5.0.35",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",

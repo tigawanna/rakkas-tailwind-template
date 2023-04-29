@@ -44,7 +44,7 @@ export function AppShell({ children }: AppShellProps) {
           <div
             onClick={slowlyCloseBackdrop}
             className="fixed top-10 z-40 flex h-full w-full flex-col animate-in slide-in-from-left 
-            duration-300 md:static md:w-[15%] md:mt-8"
+            duration-300 md:sticky md:w-[15%] md:mt-6  "
           >
             <NavBar open={open} setOpen={setOpen} />
           </div>

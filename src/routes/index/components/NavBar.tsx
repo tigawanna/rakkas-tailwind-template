@@ -1,4 +1,4 @@
-import { LucideIcon,Home,User,X,Settings, LogOut } from "lucide-react";
+import { LucideIcon,Home,User,X,Settings, LogOut, CreditCard } from "lucide-react";
 import { Link, StyledLink } from "rakkasjs";
 import { useDarkTheme } from "../../../hooks/useDarkTheme";
 import { IconWrapper } from "../../../components/shared/LucideIcon";
@@ -13,6 +13,7 @@ interface NavBarProps {
 const links: { label: string; url: string; RouteIcon:LucideIcon }[] = [
   { label: "Home", url: "/", RouteIcon: Home },
   { label: "profile", url: "/profile", RouteIcon: User },
+  { label: "card", url: "/card", RouteIcon: CreditCard },
 ];
 
 export function NavBar({ open, setOpen }: NavBarProps) {
