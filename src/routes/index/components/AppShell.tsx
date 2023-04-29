@@ -1,9 +1,11 @@
-import { Head, UseLocationResult, useLocation } from "rakkasjs";
+import { Head, useLocation } from "rakkasjs";
 import { NavBar } from "./NavBar";
 import { IconWrapper } from "../../../components/shared/LucideIcon";
 import { Menu } from "lucide-react";
 import { useBackDrop } from "../../../hooks/useBackDrop";
 import { ReactProgress } from "../../../components/shared/ReactProgress";
+import { ScrollArea } from "@/src/components/ui/scroll-area";
+
 
 
 interface AppShellProps {
@@ -13,20 +15,15 @@ interface AppShellProps {
 export function AppShell({ children }: AppShellProps) {
   const { open, setOpen, is_mobile, slowlyCloseBackdrop } = useBackDrop();
   const location = useLocation();
-  const isanumating = (location: UseLocationResult) => {
-    if (location.pending) {
-      return true;
-    }
-    return false;
-  };
+
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center">
       <Head title="Home" />
       
 
       {/* header */}
-      <div className="h-14  w-full flex flex-col items-center justify-center">
-        <div className="w-full fixed top-0 z-50 ">
+      <div className="h-14  w-full flex flex-col items-center justify-center sticky top-0 z-30 ">
+        <div className="w-full  ">
         <ReactProgress isAnimating={location.pending?true:false} />
         </div>
         <div className="w-full p-2">
@@ -46,17 +43,17 @@ export function AppShell({ children }: AppShellProps) {
         {open && (
           <div
             onClick={slowlyCloseBackdrop}
-            className="fixed flex h-full w-full flex-col animate-in slide-in-from-left 
-            duration-300 md:static md:w-[15%] "
+            className="fixed top-10 z-40 flex h-full w-full flex-col animate-in slide-in-from-left 
+            duration-300 md:static md:w-[15%] md:mt-8"
           >
             <NavBar open={open} setOpen={setOpen} />
           </div>
         )}
 
         {/* app children */}
-          <div className="h-screen w-full items-center justify-center overflow-y-scroll">
+        <ScrollArea className="h-full w-full flex items-center justify-center">
           {children}
-        </div>
+        </ScrollArea>
       </div>
     </div>
   );

@@ -9,10 +9,13 @@ export function Profile({}:ProfileProps){
 return (
  <div className='w-full h-full flex flex-col items-center justify-center p-5 '>
     
-              <div>
-                     <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
-                            Tupography example
-                     </h2>
+              <div className="p-5">
+            
+                     <h1 className="underline scroll-m-25 text-4xl font-extrabold tracking-tight lg:text-5xl text-accent">
+                        TYPOGRAPHY EXAMPLE
+                     </h1>
+                     <h1 className="p-5"></h1>
+                     
                      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
                             The Joke Tax Chronicles
                      </h1>
