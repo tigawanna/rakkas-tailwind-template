@@ -12,7 +12,8 @@
     "test:format": "prettier --check --ignore-unknown src",
     "test:lint": "eslint . --ignore-pattern dist",
     "test:unit": "vitest run",
-    "page":"node script/newpage"
+    "page":"node script/newpage",
+    "upgrade-deps": "npm install -g npm-check-updates && ncu -u && npm install"
   },
   "devDependencies": {
     "@rakkasjs/eslint-config": "0.6.20",

@@ -17,3 +17,9 @@ followed by the shadan component
 npm page pagename
 ```
 to add new pages on the same name
+
+run 
+```npm
+upgrade-deps
+```
+to get the latest version of your package.json dependancies , might introduce breaking changes so amke sureto check the changed verions 
