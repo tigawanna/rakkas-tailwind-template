@@ -1,25 +1,42 @@
+/* eslint-disable no-var */
 import { startClient } from "rakkasjs";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      suspense: true,
+      staleTime: 100,
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: false,
+    },
+  },
+});
+
+function setQueryData(data: Record<string, unknown>) {
+  for (const [key, value] of Object.entries(data)) {
+    queryClient.setQueryData(JSON.parse(key), value, { updatedAt: Date.now() });
+  }
+}
+
+declare global {
+  var $TQD: Record<string, unknown> | undefined;
+  var $TQS: typeof setQueryData;
+}
+
+// Insert data that was already streamed before this point
+setQueryData(globalThis.$TQD ?? {});
+// Delete the global variable so that it doesn't get serialized again
+delete globalThis.$TQD;
+// From now on, insert data directly
+globalThis.$TQS = setQueryData;
 
 startClient({
   hooks: {
-    beforeStart() {
-      // Do something before starting the client
-      // console.log("window size ===>  ", window)
+    wrapApp(app) {
+      return (
+        <QueryClientProvider client={queryClient}>{app}</QueryClientProvider>
+      );
     },
-    extendPageContext(ctx) {
-      // Add properties to the page context,
-      // especially to ctx.locals.
-      // Extensions added here will only be
-      // available on the client-side.
-    },
-    // wrapApp(app) {
-    //   // Wrap the Rakkas application in some provider
-    //   // component (only on the client).
-
-    //   return app;
-    // },
-  },
-  defaultQueryOptions: {
-    // Global defaults for `useQuery` options
   },
 });

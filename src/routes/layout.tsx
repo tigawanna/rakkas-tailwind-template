@@ -4,7 +4,12 @@ import { Layout } from "rakkasjs";
 import "../styles/globals.css";
 import "../styles/scrollbar.css";
 import { AppShell } from "./index/components/AppShell";
+import { RakkasErrorBoundary } from "../components/shared/wrappers/RakkasError";
 
 
-const MainLayout: Layout = ({ children }) => <AppShell children={children} />;
+const MainLayout: Layout = ({ children }) => (
+<RakkasErrorBoundary>
+    <AppShell children={children} />
+</RakkasErrorBoundary>
+);
 export default MainLayout;

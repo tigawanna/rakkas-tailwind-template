@@ -1,5 +1,6 @@
 import { Page } from "rakkasjs";
 import { CardWithForm } from "./CardExample";
+import { Bills } from "./Bills";
 
 const card: Page = ({}) => {
   return (
@@ -12,6 +13,7 @@ const card: Page = ({}) => {
       <div className="h-full ">
         
       <CardWithForm/>
+      <Bills/>
       </div>
     </main>
   );

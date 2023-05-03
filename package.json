@@ -12,7 +12,7 @@
     "test:format": "prettier --check --ignore-unknown src",
     "test:lint": "eslint . --ignore-pattern dist",
     "test:unit": "vitest run",
-    "page":"node script/newpage",
+    "page": "node script/newpage",
     "upgrade-deps": "npm install -g npm-check-updates && ncu -u && npm install"
   },
   "devDependencies": {
@@ -38,9 +38,13 @@
     "@radix-ui/react-scroll-area": "^1.0.3",
     "@radix-ui/react-select": "^1.2.1",
     "@tanem/react-nprogress": "^5.0.35",
+    "@tanstack/react-query": "^5.0.0-alpha.26",
+    "@tanstack/react-query-devtools": "^5.0.0-alpha.26",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
+    "devalue": "^4.3.0",
     "lucide-react": "^0.187.0",
+    "pocketbase": "^0.14.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

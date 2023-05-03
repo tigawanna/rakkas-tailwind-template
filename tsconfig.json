@@ -19,7 +19,9 @@
     "paths": {
       "@/*": ["./*"]
     }
-  },
+    
+  },"files": ["./globals.d.ts"],
+
   "include": ["src", ".eslintrc.cjs", "global.d.ts", "src/client.entry.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
