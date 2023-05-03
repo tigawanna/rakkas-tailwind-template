@@ -1,3 +1,4 @@
+import { QueryFunctionContext, QueryKey } from '@tanstack/react-query';
 import PocketBase from 'PocketBase'
 
 
@@ -31,3 +32,28 @@ export async function getAllRecords(table: "bills" | "tenants" | "shops") {
         throw error
     }
 }
+
+
+export interface ITenant {
+    collectionId: string
+    collectionName: string
+    contact: string
+    created: string
+    details: string
+    email: string
+    id: string
+    name: string
+    supa_id: string
+    updated: string
+    expand: {}
+}
+
+export async function getTenants(params: QueryFunctionContext<QueryKey,number>) {
+    try {
+        return pb.collection("tenants").getList<ITenant>(params.pageParam,5)
+    } catch (error) {
+        throw error
+    }
+}
+
+

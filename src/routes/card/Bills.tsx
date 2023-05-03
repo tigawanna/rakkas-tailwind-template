@@ -15,6 +15,7 @@ export function Bills({}:BillsProps){
         }
     });
     const data = query.data
+    console.log("data  === ",data)
 return (
 
 
