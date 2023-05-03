@@ -1,8 +1,6 @@
-
-import { RakkasErrorBoundary } from "@/src/components/shared/wrappers/RakkasError";
 import { getAllRecords } from "@/src/state/pb/config";
 import { useQuery } from "@tanstack/react-query";
-import { Suspense } from "react";
+
 
 interface BillsProps {
 
@@ -18,7 +16,7 @@ export function Bills({}:BillsProps){
     });
     const data = query.data
 return (
-  <Suspense fallback="loading...">
+
 
       <main className="h-full w-full flex items-center justify-center ">
        {data && (
@@ -30,6 +28,6 @@ return (
         </div>)}
       </main>
   
-    </Suspense>
+
 );
 }

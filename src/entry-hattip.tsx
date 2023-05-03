@@ -1,12 +1,10 @@
 import { createRequestHandler } from "rakkasjs";
 import {
-  HydrationBoundary,
   QueryCache,
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
 import { uneval } from "devalue";
-import React from "react";
 
 export default createRequestHandler({
   createPageHooks() {
@@ -14,14 +12,27 @@ export default createRequestHandler({
 
     return {
       wrapApp(app) {
-        const [queryClient] = React.useState(() => new QueryClient())
-        
+        const queryCache = new QueryCache({
+          onSuccess(data, query) {
+            // Store newly fetched data
+            queries[query.queryHash] = data;
+          },
+        });
+
+        const queryClient = new QueryClient({
+          queryCache,
+          defaultOptions: {
+            queries: {
+              suspense: true,
+              staleTime: Infinity,
+              refetchOnWindowFocus: false,
+              refetchOnReconnect: false,
+            },
+          },
+        });
+
         return (
-          <QueryClientProvider client={queryClient}>
-            <HydrationBoundary state={app.props}>
-            {app}
-            </HydrationBoundary>
-          </QueryClientProvider>
+          <QueryClientProvider client={queryClient}>{app}</QueryClientProvider>
         );
       },
 

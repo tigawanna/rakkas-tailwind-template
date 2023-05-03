@@ -22,6 +22,6 @@
     
   },"files": ["./globals.d.ts"],
 
-  "include": ["src", ".eslintrc.cjs", "global.d.ts", "src/client.entry.tsx"],
+  "include": ["src", ".eslintrc.cjs", "global.d.ts", "src/entry-client.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
